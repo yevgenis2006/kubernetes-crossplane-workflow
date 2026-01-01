@@ -1,4 +1,4 @@
-<img width="967" height="469" alt="image" src="https://github.com/user-attachments/assets/77b1ca16-7e4b-4b4b-a74e-e45ff8179dbb" />
+<img width="967" height="469" alt="image" src="https://github.com/user-attachments/assets/36d90759-966b-44a6-b28e-2ff8699a4bac" />
 
 
 ## Crossplane | AWS - GCP - Azure
