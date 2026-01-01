@@ -1,5 +1,4 @@
 
-
 # AnythingLLM
 anythingllm_host = "llm.appflex.io"
 anythingllm_service_name = "anything-llm"
