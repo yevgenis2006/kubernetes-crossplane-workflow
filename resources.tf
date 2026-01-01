@@ -1,5 +1,4 @@
 
-
 ###  ---  Default Template  ---  ###
 module "minio" {
   source = "./modules/minio"
