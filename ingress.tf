@@ -1,5 +1,4 @@
 
-
 resource "kubernetes_ingress_v1" "anythingllm_ingress" {
   metadata {
     name      = "anythingllm-ingress"
