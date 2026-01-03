@@ -1,10 +1,10 @@
-
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
   name: provider-k8s
 spec:
   package: "crossplane/provider-kubernetes:master"
+
 
 ---
 
@@ -13,7 +13,7 @@ kind: ProviderConfig
 metadata:
   name: local-k8s
 spec:
-  kubeconfig: {}   # use in-cluster config
+  kubeconfig: {}   # in-cluster
 
 ---
 
