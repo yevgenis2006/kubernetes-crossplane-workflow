@@ -2,7 +2,7 @@
 ###  ---  Default Template  ---  ###
 module "minio" {
   source = "./modules/minio"
-   depends_on = [kubernetes_namespace.anythingllm]
+  depends_on = [kubernetes_namespace.crossplane-system]
 }
 
 module "crossplane" {
