@@ -1,5 +1,4 @@
 
-
 resource "kubernetes_manifest" "provider_aws" {
   manifest = {
     apiVersion = "pkg.crossplane.io/v1"
