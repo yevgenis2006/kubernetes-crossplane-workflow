@@ -1,5 +1,6 @@
 
-# AnythingLLM
-anythingllm_host = "llm.appflex.io"
-anythingllm_service_name = "anything-llm"
-anythingllm_service_port = 3001
+# Crossplane Framework
+crossplane_namespace = "crossplane-system"
+crossplane_version   = "1.15.0"
+crossplane_replicas = 2
+crossplane_metrics_enabled = true
