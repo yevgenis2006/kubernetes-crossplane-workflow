@@ -1,5 +1,5 @@
 
-resource "kubernetes_namespace" "crossplane_system" {
+resource "kubernetes_namespace" "crossplane" {
 metadata {
 name = "crossplane-system"
 labels = {
