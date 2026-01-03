@@ -9,3 +9,8 @@ module "crossplane" {
   source = "./modules/crossplane"
   depends_on = [module.minio]
 }
+
+module "argo" {
+  source = "./modules/argo"
+  depends_on = [module.crossplane]
+}
