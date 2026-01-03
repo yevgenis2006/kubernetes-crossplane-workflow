@@ -18,9 +18,7 @@ resource "helm_release" "minio" {
 
       # Buckets to create automatically
       buckets = [
-        { name = "weaviate" },
-        { name = "anythingllm" },
-        { name = "flowise" },
+        { name = "crossplane" },
         { name = "airbyte" }
       ]
 
