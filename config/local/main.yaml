@@ -2,6 +2,9 @@ apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
   name: provider-k8s
+  annotations:
+    argocd.argoproj.io/health.ignore: "true"  # Avoid Argo CD health error
+    argocd.argoproj.io/sync-wave: "0"         # First wave
 spec:
   package: "registry.hub.docker.com/crossplane/provider-kubernetes:v0.13.0"
   
@@ -11,8 +14,10 @@ apiVersion: kubernetes.crossplane.io/v1alpha1
 kind: ProviderConfig
 metadata:
   name: local-k8s
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
-  kubeconfig: {}   # in-cluster
+  kubeconfig: {}   # Use in-cluster
 
 ---
 
@@ -20,6 +25,8 @@ apiVersion: kubernetes.crossplane.io/v1alpha1
 kind: Object
 metadata:
   name: demo-namespace
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"   # Apply after Provider
 spec:
   forProvider:
     apiVersion: v1
@@ -35,6 +42,8 @@ apiVersion: kubernetes.crossplane.io/v1alpha1
 kind: Object
 metadata:
   name: nginx-deployment
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   forProvider:
     apiVersion: apps/v1
@@ -59,13 +68,15 @@ spec:
                 - containerPort: 80
   providerConfigRef:
     name: local-k8s
-
+    
 ---
 
 apiVersion: kubernetes.crossplane.io/v1alpha1
 kind: Object
 metadata:
   name: nginx-service
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   forProvider:
     apiVersion: v1
